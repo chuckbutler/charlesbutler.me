@@ -225,16 +225,16 @@ module.exports = function (grunt) {
         },
 
         // The following *-min tasks produce minified files in the dist folder
-        imagemin: {
-            dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= yeoman.dist %>/images'
-                }]
-            }
-        },
+        // imagemin: {
+        //     dist: {
+        //         files: [{
+        //             expand: true,
+        //             cwd: '<%= yeoman.app %>/images',
+        //             src: '{,*/}*.{gif,jpeg,jpg,png}',
+        //             dest: '<%= yeoman.dist %>/images'
+        //         }]
+        //     }
+        // },
         svgmin: {
             dist: {
                 files: [{
@@ -303,7 +303,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
-                        'images/{,*/}*.webp',
+                        'images/{,*/}*.{gif,png,jpg,webp}',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/' + (this.includeCompass ? 'sass-' : '') + 'bootstrap/' + (this.includeCompass ? 'fonts/' : 'dist/fonts/') +'*.*'
@@ -345,7 +345,7 @@ module.exports = function (grunt) {
             dist: [
                 'compass',
                 'copy:styles',
-                'imagemin',
+                //'imagemin',
                 'svgmin'
             ]
         }
